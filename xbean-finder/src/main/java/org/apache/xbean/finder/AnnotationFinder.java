@@ -52,6 +52,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * ClassFinder searches the classpath of the specified classloader for
@@ -64,6 +66,7 @@ import java.util.Set;
  * @version $Rev$ $Date$
  */
 public class AnnotationFinder implements IAnnotationFinder {
+    private static final Logger LOG = Logger.getLogger(AnnotationFinder.class.getName());
     private static final int ASM_FLAGS = ClassReader.SKIP_CODE + ClassReader.SKIP_DEBUG + ClassReader.SKIP_FRAMES;
 
     // this flag is just a backdoor to allow workaround in case we impact an application, if we aresafe for 2-3 versions
@@ -144,6 +147,10 @@ public class AnnotationFinder implements IAnnotationFinder {
      * @param checkRuntimeAnnotation Has no effect on findMetaAnnotated* methods
      */
     public AnnotationFinder(Archive archive, boolean checkRuntimeAnnotation) {
+        if (LOG.isLoggable(Level.FINEST)) {
+            LOG.log(Level.FINEST, "AnnotationFinder processing archive {0}", archive);
+        }
+
         this.archive = archive;
         this.checkRuntimeAnnotation = checkRuntimeAnnotation;
 

@@ -32,12 +32,15 @@ import java.util.NoSuchElementException;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 
 /**
  * @version $Rev$ $Date$
  */
 public class JarArchive implements Archive, AutoCloseable {
+    private static final Logger LOG = Logger.getLogger(JarArchive.class.getName());
 
     private final ClassLoader loader;
     private final URL url;
@@ -111,6 +114,10 @@ public class JarArchive implements Archive, AutoCloseable {
     }
 
     public InputStream getBytecode(String className) throws IOException, ClassNotFoundException {
+        if (LOG.isLoggable(Level.FINEST)) {
+            LOG.log(Level.FINEST, "Searching {0} for {1}", new Object[] { jar.getName(), className });
+        }
+
         int pos = className.indexOf("<");
         if (pos > -1) {
             className = className.substring(0, pos);
