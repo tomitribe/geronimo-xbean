@@ -36,7 +36,7 @@
     <packaging>pom</packaging>
     <inceptionYear>2005</inceptionYear>
 
-    <version>4.27-TT.1-SNAPSHOT</version>
+    <version>4.27-TT.1</version>
 
     <description>
         XBean is a plugin based server architecture.
@@ -46,7 +46,7 @@
         <connection>scm:git:git@github.com:tomitribe/geronimo-xbean.git</connection>
         <developerConnection>scm:git:git@github.com:tomitribe/geronimo-xbean.git</developerConnection>
         <url>scm:git:git@github.com:tomitribe/geronimo-xbean.git</url>
-        <tag>HEAD</tag>
+        <tag>xbean-4.27-TT.1</tag>
     </scm>
 
     <url>http://geronimo.apache.org/maven/${siteId}/${project.version}</url>
