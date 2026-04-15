@@ -43,10 +43,9 @@
     </description>
 
     <scm>
-        <connection>scm:git:https://gitbox.apache.org/repos/asf/geronimo-xbean.git</connection>
-        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/geronimo-xbean.git</developerConnection>
-        <url>https://gitbox.apache.org/repos/asf/geronimo-xbean.git</url>
-        <tag>HEAD</tag>
+        <connection>scm:git:git@github.com:tomitribe/geronimo-xbean.git</connection>
+        <url>scm:git:git@github.com:tomitribe/geronimo-xbean.git</url>
+        <developerConnection>scm:git:git@github.com:tomitribe/geronimo-xbean.git</developerConnection>
     </scm>
 
     <url>https://geronimo.apache.org/maven/${siteId}/${project.version}</url>
