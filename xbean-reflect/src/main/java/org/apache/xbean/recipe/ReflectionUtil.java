@@ -662,7 +662,7 @@ public final class ReflectionUtil {
                 //
                 // Only consider methods where we can supply a value for all of the parameters
                 parameterNames = getParameterNames(constructor);
-                if (parameterNames == null || !availableProperties.containsAll(parameterNames)) {
+                if (parameterNames == null || parameterNames.contains(null) || !availableProperties.containsAll(parameterNames)) {
                     continue;
                 }
             }
@@ -803,7 +803,7 @@ public final class ReflectionUtil {
                 //
                 // Only consider methods where we can supply a value for all of the parameters
                 parameterNames = getParameterNames(method);
-                if (parameterNames == null || !allProperties.containsAll(parameterNames)) {
+                if (parameterNames == null || parameterNames.contains(null) || !allProperties.containsAll(parameterNames)) {
                     continue;
                 }
             }
